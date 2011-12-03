@@ -1,5 +1,5 @@
 # jQuery Footnote Links
-This plugin builds a list with all the links of a page. It's inspired from the [Footnote links script](http://v2.easy-designs.net/code/footnoteLinks).
+This plugin builds a list with all the links of a page. The list is visible only in browser's print preview window. It's inspired from the [Footnote links script](http://v2.easy-designs.net/code/footnoteLinks).
 
 ## How To Use
 In order to use this plugin you must insert into the page the followings:
