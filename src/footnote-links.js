@@ -135,7 +135,20 @@ if (typeof Object.create !== 'function') {
         processLinks: function (links) {
             var that = this, uniqueLinks = {}, i = 0;
             links.each(function (idx, elem) {
-                var $elem = $(this), href = $elem.attr('href');
+                var $elem = $(this),
+                    href = $elem.attr('href'),
+                    parts = document.location,
+                    prefix = parts.protocol + '//' + parts.hostname;
+
+                // If the protocol does not exits, add it.
+                if (!href.match(/^[a-zA-Z]+:\/\//ig)) {
+                    // Test for relative or absolute path.
+                    if (href[0] !== '/') {
+                        prefix += parts.pathname;
+                    }
+                    href = prefix + href;
+                }
+
                 if (!uniqueLinks[href]) {
                     i += 1;
                     uniqueLinks[href] = i;
